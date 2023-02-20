@@ -28,22 +28,23 @@
 
 # 📖 [To Do List] <a name="about-project"></a>
 
-> This is a project of a to do list app, where you get to store, add, remove your to do.
+> This project is a to list app that helps you keep track of your planned activities for the day.
 
-**[To do list]** is ...
+**[To do List]** is ...
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 - HTML
-- JavaScript ES6
-- Webpack
+- CSS
+- Javascript ES6
+- Webpack 
+
 
 ### Key Features <a name="key-features"></a>
 
-- It shows your completed tasks.
-- Remove all completed tasks function.
+> To do list let's you add and remove your tasks for the day.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -116,7 +117,7 @@ Github Pages
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Edit the to do list**
+- [ ] **Edit your to do list**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
