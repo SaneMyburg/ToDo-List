@@ -4,13 +4,13 @@ const todoArr = [
   {
     index: 1,
     description: 'wash the dishes',
-    completed: false
+    completed: false,
   },
   {
     index: 1,
     description: 'complete To Do list project',
-    completed: false
-  }
+    completed: false,
+  },
 ];
 
 const todoTask = document.querySelector('.to-do-task');

@@ -86,3 +86,14 @@ main {
   background-color: rgb(215, 215, 215);
   padding: 3%;
 }
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  margin: 2px 0%;
+}
+
+.todo p {
+  width: 85%;
+}
