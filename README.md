@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Webpack Setup</b></h3>
+  <h3><b>To Do List</b></h3>
 </div>
 
 
@@ -26,21 +26,25 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Webpack] <a name="about-project"></a>
+# 📖 [To Do List] <a name="about-project"></a>
 
-> This is a setup for webpack to use in my projects.
+> This project is a to list app that helps you keep track of your planned activities for the day.
 
-**[Webpack]** is ...
+**[To do List]** is ...
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Webpack
+- HTML
+- CSS
+- Javascript ES6
+- Webpack 
+
 
 ### Key Features <a name="key-features"></a>
 
-> Tis is just a simple setup of webpack to use in my projects.
+> To do list let's you add and remove your tasks for the day.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -75,7 +79,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/SaneMyburg/Webpack.git
+  git clone https://github.com/SaneMyburg/ToDo-List.git
 ```
 
 ### Install
@@ -113,7 +117,7 @@ Github Pages
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Advanced styles**
+- [ ] **Edit your to do list**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
