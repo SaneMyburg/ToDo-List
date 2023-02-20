@@ -44,3 +44,45 @@ main {
   margin-top: 3px;
   color: rgb(148, 148, 148);
 }
+
+/*  ---------    Form Style ------ */
+
+.list-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  margin: 2px 0% 0%;
+}
+
+.list-form,
+.list-form input,
+.list-form button {
+  background-color: rgb(255, 255, 255);
+  font-style: italic;
+  font-size: 16px;
+}
+
+#add-list,
+#add-list-btn {
+  border: none;
+}
+
+.todo,
+.todo p,
+.todo i {
+  background-color: rgb(255, 255, 255);
+}
+
+#add-list-btn i {
+  background-color: rgb(255, 255, 255);
+  color: rgb(148, 148, 148);
+  cursor: pointer;
+}
+
+.clear-all {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(215, 215, 215);
+  padding: 3%;
+}
