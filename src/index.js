@@ -1,19 +1,27 @@
-import _ from 'lodash';
 import './style.css';
 
-const title = document.createElement('h3');
-title.textContent = 'Webpack setup!';
+const todoArr = [
+  {
+    index: 1,
+    description: 'wash the dishes',
+    completed: false,
+  },
+  {
+    index: 1,
+    description: 'complete To Do list project',
+    completed: false,
+  },
+];
 
-const page = document.querySelector('body');
-page.append(title);
-
-function component() {
-    const element = document.createElement('div');
+const todoTask = document.querySelector('.to-do-task');
+todoArr.forEach((task) => {
+  const div = document.createElement('div');
+  div.classList.add('todo');
+  div.innerHTML += `
+  <input type="checkbox">
+  <p class="">${task.description}</p>
+  <i class="uil uil-ellipsis-v"></i>
   
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+  `;
+  todoTask.append(div);
+});
