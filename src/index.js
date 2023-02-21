@@ -1,5 +1,19 @@
 import './style.css';
 
+// List Class
+
+// UI class
+
+// Store Class
+
+// Display todo List 
+
+// Add New todo List 
+
+// Remove todo List
+
+
+
 const todoArr = [
   {
     index: 1,
