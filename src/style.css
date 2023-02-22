@@ -67,6 +67,15 @@ main {
   border: none;
 }
 
+#add-list:focus {
+  outline: none;
+}
+
+input[type=text] {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
 .todo,
 .todo p,
 .todo i {
@@ -89,11 +98,21 @@ main {
 
 .todo {
   display: flex;
-  justify-content: space-between;
   padding: 2%;
   margin: 2px 0%;
 }
 
 .todo p {
-  width: 85%;
+  width: 80%;
+  margin-left: 3%;
+  padding-left: 0%;
 }
+
+.edit {
+  display: flex;
+  margin-left: 12%;
+}
+
+/* .todoDiv {
+  display: flex;
+} */

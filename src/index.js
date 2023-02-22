@@ -1,41 +1,21 @@
 import './style.css';
+import RenderList, { todos } from './displaytodo.js';
 
-// List Class
+window.addEventListener('load', RenderList.displayToDo);
 
-// UI class
+const taskInput = document.querySelector('#add-list');
+const inputForm = document.querySelector('.list-form');
 
-// Store Class
+inputForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const userTask = taskInput.value.trim();
 
-// Display todo List 
-
-// Add New todo List 
-
-// Remove todo List
-
-
-
-const todoArr = [
-  {
-    index: 1,
-    description: 'wash the dishes',
-    completed: false,
-  },
-  {
-    index: 1,
-    description: 'complete To Do list project',
-    completed: false,
-  },
-];
-
-const todoTask = document.querySelector('.to-do-task');
-todoArr.forEach((task) => {
-  const div = document.createElement('div');
-  div.classList.add('todo');
-  div.innerHTML += `
-  <input type="checkbox">
-  <p class="">${task.description}</p>
-  <i class="uil uil-ellipsis-v"></i>
-  
-  `;
-  todoTask.append(div);
+  if (!todos) {
+    todos = [];
+  }
+  taskInput.value = '';
+  const taskInfo = { description: userTask, completed: false, index: todos.length + 1 };
+  todos.push(taskInfo);
+  localStorage.setItem('todo-list', JSON.stringify(todos));
+  // displayToDo()
 });
