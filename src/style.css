@@ -82,6 +82,11 @@ input[type=text] {
   background-color: rgb(255, 255, 255);
 }
 
+.todo i {
+  width: 1%;
+  margin-left: 2%;
+}
+
 #add-list-btn i {
   background-color: rgb(255, 255, 255);
   color: rgb(148, 148, 148);
@@ -107,12 +112,8 @@ input[type=text] {
   margin-left: 3%;
   padding-left: 0%;
 }
- .todo i{
-  width: 1%;
-  margin-left: 2%;
- }
 
- .check {
+.check {
   text-decoration: line-through;
   color: red;
- }
+}

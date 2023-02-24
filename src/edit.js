@@ -1,11 +1,16 @@
-import Store from "./storage.js";
+import Store from './storage.js';
 
 export default function editTask(item) {
-  item.addEventListener('focusout', () => {
-    const tasks = Store.getToDos();
-    tasks[item.id - 1].description = item.value;
+  const id = item.id.match(/\d+/)[0];
+  item.addEventListener('blur', () => {
+    let tasks = Store.getToDos();
+    tasks = tasks.map((task) => {
+      if (task.index.toString() === id) {
+        return { ...task, description: item.textContent };
+      }
+      return task;
+    });
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log(tasks)
   });
 
   item.addEventListener('keyup', (e) => {
