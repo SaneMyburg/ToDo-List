@@ -1,22 +1,50 @@
-const allTasks = document.querySelector('.to-do-task');
-const todos = JSON.parse(localStorage.getItem('todo-list')) || [];
+import Store from "./storage.js";
 
-export default class RenderList {
- static displayToDo = () => {
-   let div = '';
-   todos.forEach((todo) => {
-     div += `
-        <div class="todo">
-          <input type="checkbox">
-          <p class="checked" contenteditable="true">${todo.description}</p>
-            <div class="edit">
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>
-         </div>
-         `;
-   });
-   allTasks.innerHTML = div;
- }
+export default class Render {
+  static displayTasks = () => {
+    const tasks = Store.getToDos();
+    tasks.forEach((task) => Render.addTasks(task));
+  }
+
+  static addTasks = (task) => {
+    const listOfTasks = document.querySelector('.to-do-task');
+    const allTasks = document.createElement('div');
+    allTasks.classList.add('todo');
+
+    allTasks.innerHTML = `
+         <input type="checkbox" id="check">
+         <p class="p-element" contentEditable="true">${task.description}</p>
+         <button id=${task.index}><i class="uil uil-trash-alt" id=${task.index}></i></button>
+        `;
+    listOfTasks.appendChild(allTasks);  
+  }
+
+  static deleteTask = (element) => {
+    if (element.classList.contains('uil-trash-alt')) {
+      console.log(element.parentElement.parentElement);
+      element.parentElement.parentElement.style.display = 'none';
+    };
+  };
+
+  // static editToDo = (item) => {
+  //   item.addEventListener('focusout', () => {
+  //     const array = JSON.parse(localStorage.getItem('array')) || [];
+  //     array[item.id-1].description = item.value;
+  //     localStorage.setItem('array', JSON.stringify(array));
+  //     printTasks();
+  //   });
+  // }
 }
 
-export { todos };
+// /////////////////////////////////////////////////////////////////
+////////////////////////////////////////////
+
+
+// item.addEventListener('focusout', () => {
+//   const array = JSON.parse(localStorage.getItem('array')) || [];
+//   array[item.id-1].description = item.value;
+//   localStorage.setItem('array', JSON.stringify(array));
+//   printTasks();
+// });
+
+

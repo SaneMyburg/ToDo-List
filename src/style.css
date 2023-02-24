@@ -103,16 +103,16 @@ input[type=text] {
 }
 
 .todo p {
-  width: 80%;
+  width: 85%;
   margin-left: 3%;
   padding-left: 0%;
 }
+ .todo i{
+  width: 1%;
+  margin-left: 2%;
+ }
 
-.edit {
-  display: flex;
-  margin-left: 12%;
-}
-
-/* .todoDiv {
-  display: flex;
-} */
+ .check {
+  text-decoration: line-through;
+  color: red;
+ }

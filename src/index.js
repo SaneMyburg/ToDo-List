@@ -1,21 +1,42 @@
 import './style.css';
-import RenderList, { todos } from './displaytodo.js';
+import Store from './storage.js';
+import Render from './displaytodo.js';
+import editTask from './edit.js';
 
-window.addEventListener('load', RenderList.displayToDo);
+// Display Tasks
 
-const taskInput = document.querySelector('#add-list');
-const inputForm = document.querySelector('.list-form');
+document.addEventListener('DOMContentLoaded', Render.displayTasks);
 
-inputForm.addEventListener('submit', (e) => {
+//Adding Task
+document.querySelector('.list-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  const userTask = taskInput.value.trim();
-
-  if (!todos) {
-    todos = [];
-  }
-  taskInput.value = '';
-  const taskInfo = { description: userTask, completed: false, index: todos.length + 1 };
-  todos.push(taskInfo);
-  localStorage.setItem('todo-list', JSON.stringify(todos));
-  // displayToDo()
+  const userTask = document.querySelector('#add-list').value.trim();
+  const tasks = Store.getToDos();
+  const newtask = { description: userTask, completed: false, index: tasks.length +1};
+  Render.addTasks(newtask);
+  Store.addNewTask(newtask);
+  Store.clearInput();
 });
+
+document.querySelector('.to-do-task').addEventListener('click', (e) => {
+  Render.deleteTask(e.target);
+  Store.removeTask(e.target);
+});
+
+// Edit ToDo
+document.querySelector('.to-do-task').addEventListener('click', (e) => {
+  if (e.target.classList.contains('p-element')) {
+    editTask(e.target);
+    console.log(e.target);
+  }
+});
+
+// const editToDo = (item) => {
+//   const tasks = Store.getToDos();
+//   item.addEventListener('focusout', () => {
+//     tasks[item.id-1].description = item.value;
+//     localStorage.setItem('tasks', JSON.stringify(tasks));
+//     printTasks();
+//   }); 
+// }
+// editToDo(description);
