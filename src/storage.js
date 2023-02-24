@@ -22,7 +22,6 @@ export default class Store {
    static removeTask = (element) => {
      let tasks = Store.getToDos();
      tasks = tasks.filter((item) => item.index.toString() !== element.id.toString());
-     console.log(element.id);
      let i = 1;
      tasks.forEach((task) => {
        task.index = i;
@@ -30,6 +29,5 @@ export default class Store {
      });
      window.location.reload();
      localStorage.setItem('tasks', JSON.stringify(tasks));
-
    };
 }

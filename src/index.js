@@ -22,10 +22,8 @@ document.querySelector('.to-do-task').addEventListener('click', (e) => {
   Store.removeTask(e.target);
   Render.deleteTask(e.target);
 
-
   // Edit ToDo
   if (e.target.classList.contains('p-element')) {
     editTask(e.target);
   }
 });
-
