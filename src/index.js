@@ -31,11 +31,21 @@ document.querySelector('.to-do-task').addEventListener('click', (e) => {
 
     // Checked Tasks
   } else if (e.target.className === 'check') {
-      updateStatus(e.target);
-      if ( e.target.checked) {
-        e.target.nextElementSibling.style.textDecoration = 'line-through';
-      } else {
-        e.target.nextElementSibling.style.textDecoration = 'none';
-      }
+    updateStatus(e.target);
+    if (e.target.checked) {
+      e.target.nextElementSibling.style.textDecoration = 'line-through';
+    } else {
+      e.target.nextElementSibling.style.textDecoration = 'none';
     }
+  }
+});
+
+// Remove all completed
+
+document.querySelector('.clear-all').addEventListener('click', (e) => {
+  e.preventDefault();
+  let tasks = Store.getToDos();
+  tasks = tasks.filter((todo) => todo.completed === false);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  window.location.reload();
 });

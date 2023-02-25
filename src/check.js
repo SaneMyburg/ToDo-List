@@ -1,15 +1,13 @@
-import Store from "./storage.js";
+import Store from './storage.js';
 
 export default function updateStatus(checkbox) {
-  console.log(checkbox);
-  const id = checkbox.id;
+  const { id } = checkbox;
   let tasks = Store.getToDos();
-  tasks = tasks.map(task => {
+  tasks = tasks.map((task) => {
     if (task.id.toString() === id) {
-      return {...task, completed : !task.completed}
-    } else {
-      return task;
+      return { ...task, completed: !task.completed };
     }
+    return task;
   });
-  localStorage.setItem('tasks', JSON.stringify(tasks)); 
-};
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
