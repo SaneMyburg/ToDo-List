@@ -2,6 +2,7 @@ import './style.css';
 import Store from './storage.js';
 import Render from './displaytodo.js';
 import editTask from './edit.js';
+import updateStatus from './check.js';
 
 // Display Tasks
 window.addEventListener('load', (Render.displayTasks));
@@ -23,8 +24,18 @@ document.querySelector('.to-do-task').addEventListener('click', (e) => {
   // Edit ToDo
   if (e.target.classList.contains('p-element')) {
     editTask(e.target);
+  // Remove Task
   } else if (e.target.tagName === 'I') {
     Store.removeTask(e.target);
     Render.deleteTask(e.target);
-  }
+
+    // Checked Tasks
+  } else if (e.target.className === 'check') {
+      updateStatus(e.target);
+      if ( e.target.checked) {
+        e.target.nextElementSibling.style.textDecoration = 'line-through';
+      } else {
+        e.target.nextElementSibling.style.textDecoration = 'none';
+      }
+    }
 });
