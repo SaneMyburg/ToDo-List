@@ -12,16 +12,16 @@ export default class Render {
     allTasks.classList.add('todo');
 
     allTasks.innerHTML = `
-         <input type="checkbox" id="check">
-         <p class="p-element" id="paragraph-${task.index}" contentEditable="true">${task.description}</p>
-         <button id=${task.index}><i class="uil uil-trash-alt" id=${task.index}></i></button>
+         <input type="checkbox" id="${task.id}" class="check">
+         <p class="p-element" id="paragraph-${task.id}" contentEditable="true">${task.description}</p>
+         <button id="${task.id}"><i class="uil uil-trash-alt btn" id="${task.id}"></i></button>
         `;
     listOfTasks.appendChild(allTasks);
   }
 
   static deleteTask = (element) => {
     if (element.classList.contains('uil-trash-alt')) {
-      element.parentElement.parentElement.style.display = 'none';
+      element.parentElement.parentElement.remove();
     }
   };
 }

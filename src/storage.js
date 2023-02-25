@@ -1,3 +1,5 @@
+// import Render from './displaytodo.js';
+
 export default class Store {
   static getToDos = () => {
     let tasks;
@@ -20,14 +22,10 @@ export default class Store {
   };
 
    static removeTask = (element) => {
+     const { id } = element;
      let tasks = Store.getToDos();
-     tasks = tasks.filter((item) => item.index.toString() !== element.id.toString());
-     let i = 1;
-     tasks.forEach((task) => {
-       task.index = i;
-       i += 1;
-     });
-     window.location.reload();
+     tasks = tasks.filter((task) => task.id.toString() !== id).map((task, index) => (
+       { ...task, index: index + 1 }));
      localStorage.setItem('tasks', JSON.stringify(tasks));
    };
 }
