@@ -4,8 +4,6 @@ import Render from './displaytodo.js';
 import editTask from './edit.js';
 
 // Display Tasks
-
-// document.addEventListener('DOMContentLoaded', Render.displayTasks);
 window.addEventListener('load', (Render.displayTasks));
 // Adding Task
 document.querySelector('.list-form').addEventListener('submit', (e) => {
