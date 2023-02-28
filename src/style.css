@@ -1,3 +1,119 @@
-body {
-  background-color: bisque;
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  background-color: rgb(237, 234, 234);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* -----Main header--- */
+
+.list-container {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.title,
+.title h1,
+.title i {
+  background-color: rgb(255, 255, 255);
+}
+
+.title h1 {
+  font-size: 18px;
+  color: rgb(148, 148, 148);
+}
+
+.title i {
+  margin-top: 3px;
+  color: rgb(148, 148, 148);
+}
+
+/*  ---------    Form Style ------ */
+
+.list-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  margin: 2px 0% 0%;
+}
+
+.list-form,
+.list-form input,
+.list-form button {
+  background-color: rgb(255, 255, 255);
+  font-style: italic;
+  font-size: 16px;
+}
+
+#add-list,
+#add-list-btn {
+  border: none;
+}
+
+#add-list:focus {
+  outline: none;
+}
+
+input[type=text] {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.todo,
+.todo p,
+.todo i {
+  background-color: rgb(255, 255, 255);
+}
+
+.todo i {
+  width: 1%;
+  margin-left: 2%;
+}
+
+#add-list-btn i {
+  background-color: rgb(255, 255, 255);
+  color: rgb(148, 148, 148);
+  cursor: pointer;
+}
+
+.clear-all {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(215, 215, 215);
+  padding: 3%;
+}
+
+.todo {
+  display: flex;
+  padding: 2%;
+  margin: 2px 0%;
+}
+
+.todo p {
+  width: 85%;
+  margin-left: 3%;
+  padding-left: 0%;
+}
+
+.check {
+  text-decoration: line-through;
+  color: red;
 }

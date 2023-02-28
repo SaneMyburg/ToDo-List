@@ -5,11 +5,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack setup</title>
+  <title>To do list</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 
 <body>
-  Hello world!
+  <main>
+    <div class="list-container">
+      <div class="title">
+        <h1>Today's To Do</h1>
+        <i class="uil uil-sync"></i>
+      </div>
+      <form class="list-form">
+        <input id="add-list" type="text" placeholder="Add to your list..." required>
+        <!-- <button id="add-list-btn" type="submit"></button><i class="uil uil-plus"></i></button> -->
+      </form>
+      <div class="to-do-task">
+        <!-- <div class="todo">
+          <i class="uil uil-square-full"></i>
+          <p class="">wash the dishes</p>
+          <i class="uil uil-ellipsis-v"></i>
+        </div>
+        <div class="todo">
+          <i class="uil uil-square-full"></i>
+          <p class="">complete To Do list project</p>
+          <i class="uil uil-ellipsis-v"></i>
+        </div> -->
+      </div>
+      <button class="clear-all">Clear all completed</button>
+    </div>
+  </main>
 </body>
 
 </html>
